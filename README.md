@@ -69,6 +69,9 @@ $fileEnc = Get-Content -Path $filePath -Raw -Encoding UTF8
 
 $LF = "`r`n"
 
+
+# please update the name of Content-Disposition if multipart content name are different in server 
+
 $bodyLines = @(
 
     "--$boundary",
