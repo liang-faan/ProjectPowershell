@@ -102,3 +102,18 @@ catch {
 
 Read-Host -Prompt "Press any key to continue or CTRL+C to quit"
 ```
+
+## Format table
+```
+$response | Format-Table -Property property1, property2, property3, property4, property5, property6, property7, property8 -AutoSize | Write-Output | out-host
+```
+
+## Convert Json to Csv
+```
+$folderName = "Output"
+$date = Get-Date -Format "yyyy-MM-dd"
+$file = "{0}_{1}.csv" -f $folderName, $date
+
+#$response | ConvertTo-Json -depth 100 | Out-File $file
+$response | ConvertTo-Csv -NoTypeInformation | Set-Content ".\$folderName\$file"
+```
