@@ -33,7 +33,7 @@ Write-Host $bodyLines
 
 $headers = @{'Accept' = 'application/json'; 'x-int-role' = 'create'; 'Authorization' = $token }
 try {
-    $Result = Invoke-RestMethod -Uri "http://localhost:8101/catalogue/v1/mgmt/inventory/whitelist/upload" -Headers $headers -ContentType "multipart/form-data; boundary=$boundary" -Method Post -Body $bodyLines
+    $Result = Invoke-RestMethod -Uri "http://localhost:8101/upload" -Headers $headers -ContentType "multipart/form-data; boundary=$boundary" -Method Post -Body $bodyLines
     $Result | Write-Output | Out-Host
 }
 catch {
